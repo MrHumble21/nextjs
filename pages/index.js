@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Banner from "../components/Banner";
 
 export default function Home() {
+  const onClickHandlerBannerBtn = (e)=>{
+    console.log('i got clicked', e)
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -12,14 +16,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Nearby Coffee 
-        </h1>
+        <h1 className={styles.title}>Nearby Coffee</h1>
 
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+      <Banner bannerBtnText='View stores nearby' onClickHandlerBannerBtn={onClickHandlerBannerBtn} />
       </main>
 
       <footer className={styles.footer}></footer>
